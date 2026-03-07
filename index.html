@@ -731,21 +731,41 @@
   .schedule-updated-banner {
     display: none;
     text-align: center;
-    padding: 10px 16px;
-    background: #fef9e7;
-    border: 1px solid #f0d660;
-    border-radius: 8px;
-    margin: 12px 20px 0;
-    font-size: 13px;
-    color: #5a4e00;
+    padding: 14px 20px;
+    background: linear-gradient(135deg, #fff3cd, #ffeaa0);
+    border: 2px solid #e6c200;
+    border-radius: 10px;
+    margin: 14px 20px 0;
+    font-size: 15px;
+    color: #5a4200;
     font-weight: 500;
-    line-height: 1.4;
+    line-height: 1.5;
+    box-shadow: 0 2px 8px rgba(230, 194, 0, 0.25);
   }
   .schedule-updated-banner.visible {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .schedule-updated-banner .updated-icon {
+    font-size: 18px;
+    flex-shrink: 0;
   }
   .schedule-updated-banner .updated-label {
+    font-weight: 700;
+  }
+  .schedule-updated-banner .updated-time {
     font-weight: 600;
+  }
+  @media (max-width: 480px) {
+    .schedule-updated-banner {
+      margin: 10px 12px 0;
+      padding: 12px 14px;
+      font-size: 14px;
+      border-radius: 8px;
+    }
   }
 
   /* ===== PAST ROUTINES ===== */
@@ -822,7 +842,8 @@
   </div>
 
   <div class="schedule-updated-banner" id="scheduleUpdatedBanner">
-    <span class="updated-label">Schedule times updated</span> — <span id="updatedAtTime"></span>
+    <span class="updated-icon">&#x1F551;</span>
+    <span><span class="updated-label">Schedule times updated</span> — <span class="updated-time" id="updatedAtTime"></span></span>
   </div>
 
   <div class="section-label">Schedule by Day</div>
