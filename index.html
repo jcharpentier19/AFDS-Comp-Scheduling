@@ -822,6 +822,186 @@
   }
   .past-toggle-btn.active .past-toggle-count { background: var(--blush); color: var(--rose); }
 
+  /* ===== AWARD STRUCTURE TABLE ===== */
+  .award-structure-section {
+    background: var(--deep);
+    padding: 48px 24px 56px;
+    text-align: center;
+    border-top: 3px solid var(--rose);
+  }
+  .award-structure-inner {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .award-structure-eyebrow {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
+    color: var(--blush);
+    margin-bottom: 14px;
+    opacity: 0.75;
+  }
+  .award-structure-divider {
+    width: 48px;
+    height: 2px;
+    background: var(--rose);
+    margin: 0 auto 22px;
+  }
+  .award-structure-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+  .award-structure-heading span { color: var(--blush); font-style: italic; }
+  .award-structure-sub {
+    font-size: 14px;
+    color: #aaa;
+    font-weight: 300;
+    margin-bottom: 28px;
+    line-height: 1.6;
+  }
+  .award-toggle-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--rose);
+    color: white;
+    border: none;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 14px 28px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    box-shadow: 0 6px 28px rgba(204,17,34,0.45);
+    margin-bottom: 24px;
+  }
+  .award-toggle-btn:hover {
+    background: #e01428;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 36px rgba(204,17,34,0.55);
+  }
+  .award-toggle-btn svg {
+    width: 18px;
+    height: 18px;
+    transition: transform 0.3s;
+  }
+  .award-toggle-btn.open svg {
+    transform: rotate(180deg);
+  }
+  .award-table-wrap {
+    display: none;
+    margin-top: 8px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .award-table-wrap.open {
+    display: block;
+  }
+  .award-level-block {
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  .award-level-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 8px 8px 0 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .award-level-title.novice { background: #2e6285; }
+  .award-level-title.intermediate { background: #5a3a8a; }
+  .award-level-title.advanced { background: var(--rose); }
+  .award-level-badge {
+    font-size: 11px;
+    font-weight: 600;
+    background: rgba(255,255,255,0.2);
+    padding: 2px 10px;
+    border-radius: 20px;
+  }
+  .award-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 0 0 8px 8px;
+    overflow: hidden;
+    font-size: 14px;
+  }
+  .award-table thead th {
+    background: #f5f0f0;
+    color: var(--text);
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 10px 16px;
+    text-align: left;
+    border-bottom: 2px solid var(--border);
+  }
+  .award-table tbody td {
+    padding: 10px 16px;
+    border-bottom: 1px solid #f0e8e8;
+    color: var(--text);
+  }
+  .award-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+  .award-table tbody tr:hover {
+    background: var(--soft-pink);
+  }
+  .award-table .num-col {
+    font-weight: 700;
+    text-align: center;
+    font-variant-numeric: tabular-nums;
+  }
+  .award-table .award-col {
+    font-weight: 600;
+    color: var(--rose);
+  }
+  .award-totals-row {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-top: 18px;
+  }
+  .award-total-card {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 10px;
+    padding: 14px 22px;
+    text-align: center;
+    min-width: 120px;
+  }
+  .award-total-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--blush);
+  }
+  .award-total-label {
+    font-size: 11px;
+    color: #aaa;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 4px;
+  }
+  @media (max-width: 480px) {
+    .award-structure-section { padding: 32px 16px 40px; }
+    .award-table { font-size: 13px; }
+    .award-table thead th, .award-table tbody td { padding: 8px 10px; }
+    .award-toggle-btn { font-size: 14px; padding: 12px 20px; }
+  }
+
 </style>
 </head>
 <body>
@@ -1694,6 +1874,102 @@
 
 </div><!-- end container -->
 
+<!-- ===== AWARD STRUCTURE TABLE ===== -->
+<div class="award-structure-section">
+  <div class="award-structure-inner">
+    <div class="award-structure-eyebrow">Competition Breakdown</div>
+    <div class="award-structure-divider"></div>
+    <h2 class="award-structure-heading">Award <span>Structure</span></h2>
+    <p class="award-structure-sub">Routines by level and category, with available placement awards</p>
+
+    <button class="award-toggle-btn" id="awardToggleBtn" onclick="toggleAwardTable()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      View Award Structure
+    </button>
+
+    <div class="award-table-wrap" id="awardTableWrap">
+
+      <!-- Summary totals -->
+      <div class="award-totals-row">
+        <div class="award-total-card">
+          <div class="award-total-num">216</div>
+          <div class="award-total-label">Total Routines</div>
+        </div>
+        <div class="award-total-card">
+          <div class="award-total-num">3</div>
+          <div class="award-total-label">Levels</div>
+        </div>
+        <div class="award-total-card">
+          <div class="award-total-num">16</div>
+          <div class="award-total-label">Categories</div>
+        </div>
+      </div>
+
+      <!-- Novice Level -->
+      <div class="award-level-block" style="margin-top:24px;">
+        <div class="award-level-title novice">
+          Novice Level
+          <span class="award-level-badge">43 Routines</span>
+        </div>
+        <table class="award-table">
+          <thead>
+            <tr><th>Category</th><th style="text-align:center">Routines</th><th>Placement Awards</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Tiny Solo</td><td class="num-col">4</td><td class="award-col">Top 1</td></tr>
+            <tr><td>Petite Solo</td><td class="num-col">21</td><td class="award-col">Top 10</td></tr>
+            <tr><td>Petite Large Group</td><td class="num-col">4</td><td class="award-col">Top 1</td></tr>
+            <tr><td>Junior Solo</td><td class="num-col">9</td><td class="award-col">Top 5</td></tr>
+            <tr><td>Junior Duo/Trio</td><td class="num-col">5</td><td class="award-col">Top 3</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Intermediate Level -->
+      <div class="award-level-block">
+        <div class="award-level-title intermediate">
+          Intermediate Level
+          <span class="award-level-badge">96 Routines</span>
+        </div>
+        <table class="award-table">
+          <thead>
+            <tr><th>Category</th><th style="text-align:center">Routines</th><th>Placement Awards</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Petite Solo</td><td class="num-col">11</td><td class="award-col">Top 5</td></tr>
+            <tr><td>Junior Solo</td><td class="num-col">7</td><td class="award-col">Top 5</td></tr>
+            <tr><td>Junior Small Group</td><td class="num-col">10</td><td class="award-col">Top 5</td></tr>
+            <tr><td>Junior Large Group</td><td class="num-col">6</td><td class="award-col">Top 3</td></tr>
+            <tr><td>Teen Solo</td><td class="num-col">38</td><td class="award-col">Top 10</td></tr>
+            <tr><td>Senior Solo</td><td class="num-col">24</td><td class="award-col">Top 10</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Advanced Level -->
+      <div class="award-level-block">
+        <div class="award-level-title advanced">
+          Advanced Level
+          <span class="award-level-badge">77 Routines</span>
+        </div>
+        <table class="award-table">
+          <thead>
+            <tr><th>Category</th><th style="text-align:center">Routines</th><th>Placement Awards</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Senior Solo</td><td class="num-col">52</td><td class="award-col">Top 10</td></tr>
+            <tr><td>Teen Small Group</td><td class="num-col">6</td><td class="award-col">Top 3</td></tr>
+            <tr><td>Senior Small Group</td><td class="num-col">6</td><td class="award-col">Top 3</td></tr>
+            <tr><td>Teen Large Group</td><td class="num-col">12</td><td class="award-col">Top 10</td></tr>
+            <tr><td>Senior Large Group</td><td class="num-col">1</td><td class="award-col">N/A</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</div>
+
 <!-- ===== AWARDS SPREADSHEET CTA — prominent section above footer ===== -->
 <div class="awards-cta-section">
   <div class="awards-cta-inner">
@@ -1740,6 +2016,16 @@
 </div>
 
 <script>
+  function toggleAwardTable() {
+    const wrap = document.getElementById('awardTableWrap');
+    const btn = document.getElementById('awardToggleBtn');
+    const isOpen = wrap.classList.toggle('open');
+    btn.classList.toggle('open', isOpen);
+    // Update only the text node (last child after the SVG)
+    const textNodes = Array.from(btn.childNodes).filter(n => n.nodeType === 3);
+    if (textNodes.length) textNodes[textNodes.length - 1].textContent = isOpen ? ' Hide Award Structure' : ' View Award Structure';
+  }
+
   let activeDay = 'all';
 
   function showDay(day, btn) {
