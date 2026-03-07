@@ -719,85 +719,8 @@
     background: var(--soft-pink);
   }
 
-  /* ===== ROUTINE SYNC SECTION ===== */
-  .routine-sync-section {
-    margin-top: 14px;
-    padding-top: 14px;
-    border-top: 1px solid var(--border);
-  }
-  .routine-sync-label {
-    font-family: 'Playfair Display', serif;
-    font-size: 13px;
-    font-weight: 700;
-    color: var(--deep);
-    margin-bottom: 4px;
-  }
-  .routine-sync-sub {
-    font-size: 11px;
-    color: var(--muted);
-    margin-bottom: 10px;
-  }
-  .routine-sync-row {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-  .routine-sync-input {
-    width: 100px;
-    padding: 12px 14px;
-    border-radius: 10px;
-    border: 2px solid var(--border);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 17px;
-    font-weight: 600;
-    text-align: center;
-    color: var(--deep);
-    outline: none;
-    -webkit-appearance: none;
-  }
-  .routine-sync-input:focus {
-    border-color: var(--rose);
-  }
-  .routine-sync-input::placeholder {
-    color: #bbb;
-    font-weight: 400;
-  }
-  .routine-sync-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 12px 22px;
-    border-radius: 10px;
-    border: 2px solid var(--rose);
-    background: var(--rose);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 15px;
-    font-weight: 700;
-    color: white;
-    cursor: pointer;
-    transition: all 0.15s;
-    -webkit-appearance: none;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-  }
-  .routine-sync-btn:active {
-    transform: scale(0.96);
-    opacity: 0.85;
-  }
-  .routine-sync-feedback {
-    font-size: 12px;
-    color: var(--muted);
-    margin-top: 8px;
-    min-height: 18px;
-  }
-  .routine-sync-feedback.error { color: var(--rose); }
-  .routine-sync-feedback.success { color: #2e6b45; }
-
   /* push page content up so panel doesn't cover routines */
-  body.shift-mode { padding-bottom: 260px; }
+  body.shift-mode { padding-bottom: 180px; }
 
   @media (max-width: 480px) {
     .shift-btn { min-width: 90px; padding: 12px 14px; font-size: 15px; }
@@ -1799,15 +1722,6 @@
     <button class="shift-btn shift-plus"  onclick="shiftSchedule(5)">+5 min</button>
   </div>
   <button class="shift-reset-btn" id="shiftResetBtn" onclick="shiftSchedule(0)">Reset to Original Times</button>
-  <div class="routine-sync-section">
-    <div class="routine-sync-label">Sync to Current Routine</div>
-    <div class="routine-sync-sub">Enter the routine # on stage now to auto-calculate the time shift</div>
-    <div class="routine-sync-row">
-      <input type="number" class="routine-sync-input" id="routineSyncInput" placeholder="#" min="1" inputmode="numeric">
-      <button class="routine-sync-btn" onclick="syncToRoutine()">Sync</button>
-    </div>
-    <div class="routine-sync-feedback" id="routineSyncFeedback"></div>
-  </div>
 </div>
 
 <script>
@@ -2139,121 +2053,6 @@
 
     syncDirectorPanel();
   })();
-
-  // Director action: sync schedule to a routine number currently on stage
-  function syncToRoutine() {
-    var input = document.getElementById('routineSyncInput');
-    var feedback = document.getElementById('routineSyncFeedback');
-    var num = (input.value || '').trim().replace('#', '');
-    if (!num || isNaN(num)) {
-      feedback.textContent = 'Please enter a valid routine number';
-      feedback.className = 'routine-sync-feedback error';
-      return;
-    }
-
-    // Find the routine row matching this number
-    var targetRow = null;
-    document.querySelectorAll('.routine-row .rnum').forEach(function(el) {
-      if (el.textContent.trim() === '#' + num) {
-        targetRow = el.closest('.routine-row');
-      }
-    });
-    // Also check mobile rnum
-    if (!targetRow) {
-      document.querySelectorAll('.routine-row .rnum-mobile').forEach(function(el) {
-        if (el.textContent.trim() === '#' + num) {
-          targetRow = el.closest('.routine-row');
-        }
-      });
-    }
-
-    if (!targetRow) {
-      feedback.textContent = 'Routine #' + num + ' not found';
-      feedback.className = 'routine-sync-feedback error';
-      return;
-    }
-
-    // Get the original scheduled time for this routine
-    var timeEl = targetRow.querySelector('.time-stage');
-    if (!timeEl || !timeEl.dataset.originalTime) {
-      feedback.textContent = 'No time data for routine #' + num;
-      feedback.className = 'routine-sync-feedback error';
-      return;
-    }
-    var origTimeStr = timeEl.dataset.originalTime;
-    if (origTimeStr === '\u2014' || !origTimeStr) {
-      feedback.textContent = 'No scheduled time for routine #' + num;
-      feedback.className = 'routine-sync-feedback error';
-      return;
-    }
-
-    var parsed = parseTime12(origTimeStr);
-    if (!parsed) {
-      feedback.textContent = 'Could not parse time for routine #' + num;
-      feedback.className = 'routine-sync-feedback error';
-      return;
-    }
-
-    // Determine the date for this routine's day
-    var day = targetRow.dataset.day;
-    var dateStr = _dateMap[day];
-    if (!dateStr) {
-      feedback.textContent = 'Unknown day for routine #' + num;
-      feedback.className = 'routine-sync-feedback error';
-      return;
-    }
-
-    // Build the originally scheduled datetime
-    var scheduledTime = new Date(dateStr + 'T' + parsed);
-    var now = new Date();
-
-    // Calculate difference in minutes (positive = behind schedule, negative = ahead)
-    var diffMs = now.getTime() - scheduledTime.getTime();
-    var diffMin = Math.round(diffMs / 60000);
-
-    // Apply as the new absolute shift (replaces any existing shift)
-    _shiftTotal = diffMin;
-    syncDirectorPanel();
-    applyShiftToDOM(_shiftTotal);
-    markPastRoutines();
-
-    var sign = diffMin > 0 ? '+' : '';
-    showToast('Synced to routine #' + num + ' \u2014 shift ' + (diffMin === 0 ? 'reset' : sign + diffMin + ' min'));
-
-    // Build timestamp and update banner
-    var stamp = null;
-    if (_shiftTotal !== 0) {
-      var opts = { hour: 'numeric', minute: '2-digit', hour12: true };
-      var dateOpts = { month: 'short', day: 'numeric' };
-      var timeStr2 = now.toLocaleTimeString('en-US', opts);
-      var dateStr2 = now.toLocaleDateString('en-US', dateOpts);
-      stamp = dateStr2 + ' at ' + timeStr2;
-    }
-    updateBanner(_shiftTotal, stamp);
-
-    // Persist to server
-    fetch('/api/schedule-shift?token=' + encodeURIComponent(_directorToken), {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ offset: _shiftTotal, timestamp: stamp })
-    }).catch(function() {
-      showToast('Warning: could not save shift to server');
-    });
-
-    feedback.textContent = 'Synced! Routine #' + num + ' \u2192 ' + (diffMin === 0 ? 'on schedule' : sign + diffMin + ' min shift');
-    feedback.className = 'routine-sync-feedback success';
-    input.value = '';
-  }
-
-  // Allow Enter key in the sync input
-  document.addEventListener('DOMContentLoaded', function() {
-    var syncInput = document.getElementById('routineSyncInput');
-    if (syncInput) {
-      syncInput.addEventListener('keydown', function(e) {
-        if (e.key === 'Enter') { e.preventDefault(); syncToRoutine(); }
-      });
-    }
-  });
 
   // Director action: shift the schedule and persist to server
   function shiftSchedule(delta) {
