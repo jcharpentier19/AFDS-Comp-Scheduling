@@ -236,6 +236,19 @@
     box-shadow: 0 0 0 2px var(--rose);
     flex-shrink: 0;
   }
+  /* Level-colored timeline dots */
+  [data-level="Novice"] .dot {
+    background: #2e6285;
+    box-shadow: 0 0 0 2px #2e6285;
+  }
+  [data-level="Intermediate"] .dot {
+    background: #5a3a8a;
+    box-shadow: 0 0 0 2px #5a3a8a;
+  }
+  [data-level="Advanced"] .dot {
+    background: var(--rose);
+    box-shadow: 0 0 0 2px var(--rose);
+  }
   .rnum { font-size: 12px; font-weight: 700; color: #3a2a2a; opacity: 1; margin-top: 5px; letter-spacing: 0.3px; margin-left: 4px; }
 
   .routine-card {
@@ -253,6 +266,39 @@
   }
   .routine-card:hover { box-shadow: 0 4px 16px rgba(204,17,34,0.09); border-color: var(--blush); }
   .routine-card.is-title { border-left: 4px solid var(--rose); }
+
+  /* Level-based color coding — matches award structure */
+  [data-level="Novice"] .routine-card {
+    border-left: 4px solid #2e6285;
+    background: #f3f7fa;
+  }
+  [data-level="Novice"] .routine-card:hover {
+    box-shadow: 0 4px 16px rgba(46,98,133,0.12);
+    border-color: #a8cce0;
+    border-left: 4px solid #2e6285;
+  }
+  [data-level="Intermediate"] .routine-card {
+    border-left: 4px solid #5a3a8a;
+    background: #f6f2fb;
+  }
+  [data-level="Intermediate"] .routine-card:hover {
+    box-shadow: 0 4px 16px rgba(90,58,138,0.12);
+    border-color: #c4b3de;
+    border-left: 4px solid #5a3a8a;
+  }
+  [data-level="Advanced"] .routine-card {
+    border-left: 4px solid var(--rose);
+    background: #fdf5f5;
+  }
+  [data-level="Advanced"] .routine-card:hover {
+    box-shadow: 0 4px 16px rgba(204,17,34,0.12);
+    border-color: var(--blush);
+    border-left: 4px solid var(--rose);
+  }
+  /* Title contender overrides — thicker border */
+  [data-level="Novice"] .routine-card.is-title { border-left: 4px solid #2e6285; }
+  [data-level="Intermediate"] .routine-card.is-title { border-left: 4px solid #5a3a8a; }
+  [data-level="Advanced"] .routine-card.is-title { border-left: 4px solid var(--rose); }
 
   .routine-body { flex: 1; min-width: 0; }
   .routine-title {
@@ -1952,7 +1998,7 @@
 </div>
 <div class="footer-note">
   <strong>Accelerate Dance Experience</strong> · March 6–8, 2026 · Stockbridge Theater at Pinkerton Academy · Derry, NH 03038<br>
-  <span style="display:block;margin-top:6px;color:#666">● Red left border = Title Contender &nbsp;·&nbsp; All times are approximate stage times · Check each routine for individual arrival times · Full dancer rosters from official PDF</span>
+  <span style="display:block;margin-top:6px;color:#666"><span style="color:#2e6285">●</span> Novice &nbsp;<span style="color:#5a3a8a">●</span> Intermediate &nbsp;<span style="color:#cc1122">●</span> Advanced &nbsp;·&nbsp; All times are approximate stage times · Check each routine for individual arrival times · Full dancer rosters from official PDF</span>
 </div>
 
 <!-- DIRECTOR SCHEDULE-SHIFT PANEL (hidden unless ?token= is present) -->
