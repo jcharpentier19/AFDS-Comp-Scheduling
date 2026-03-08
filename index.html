@@ -823,6 +823,33 @@
     }
   }
 
+  /* ===== AWARD RESULTS ON CARDS ===== */
+  .award-results {
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px dashed #e0d0d0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    align-items: center;
+  }
+  .award-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 20px;
+  }
+  .award-tag-gold { background: #fff8e1; color: #8a6d00; border: 1px solid #f0d060; }
+  .award-tag-highgold { background: #fff3d0; color: #7a5c00; border: 1px solid #e8c030; }
+  .award-tag-platinum { background: #f0f0ff; color: #4a4a8a; border: 1px solid #c0c0e8; }
+  .award-tag-overall { background: #e8f5ec; color: #2e6b45; border: 1px solid #a0d8b0; }
+  .award-tag-special { background: #fef3ff; color: #7a2a8a; border: 1px solid #dda0ee; font-size: 9px; text-transform: none; letter-spacing: 0; }
+
   /* ===== PAST ROUTINES ===== */
   .routine-row.past-routine { display: none !important; }
   .routine-row.past-routine.show-past { display: flex !important; }
@@ -1168,6 +1195,7 @@
             <div class="routine-title">Genesis</div>
             <div class="routine-dancer">Gabby Dubovsky &amp; Gabriella Hennessey</div>
             <div class="tags"><span class="tag tag-advanced">Advanced</span><span class="tag tag-senior">Senior</span><span class="tag tag-genre">Contemporary · Duo/Trio</span></div>
+            <div class="award-results"><span class="award-tag award-tag-highgold">🥇 High Gold</span><span class="award-tag award-tag-overall">🏆 3rd Overall</span><span class="award-tag award-tag-special">⭐ "Excelling In Expression" Judges Award</span><span class="award-tag award-tag-special">⭐ Convention Scholarship Winners</span></div>
           </div>
           <div class="routine-time-col"><div class="time-stage">9:03 PM</div><div class="time-arrive">Arrive 8:00 PM</div></div>
         </div>
@@ -1181,6 +1209,7 @@
             <div class="routine-title">Blackbird</div>
             <div class="routine-dancer">Gianna Mitchell &amp; Leia Mitchell</div>
             <div class="tags"><span class="tag tag-advanced">Advanced</span><span class="tag tag-senior">Senior</span><span class="tag tag-genre">Lyrical · Duo/Trio</span></div>
+            <div class="award-results"><span class="award-tag award-tag-highgold">🥇 High Gold</span></div>
           </div>
           <div class="routine-time-col"><div class="time-stage">9:09 PM</div><div class="time-arrive">Arrive 8:00 PM</div></div>
         </div>
@@ -1204,6 +1233,7 @@
             <div class="routine-title">Liza With A "Z"</div>
             <div class="routine-dancer">Eliza Cappello</div>
             <div class="tags"><span class="tag tag-novice">Novice</span><span class="tag tag-tiny">Tiny</span><span class="tag tag-genre">Tap · Solo</span></div>
+            <div class="award-results"><span class="award-tag award-tag-gold">🥇 Gold</span></div>
           </div>
           <div class="routine-time-col"><div class="time-stage">8:14 AM</div><div class="time-arrive">Arrive 7:15 AM</div></div>
         </div>
@@ -1218,6 +1248,7 @@
             <div class="routine-dancer">Large Group (11)</div>
             <div class="routine-roster">Sydney Bakaysa, Paulina Bandarchuk, Ava Belkin, Liora Belkin, Abigail Dumanski, Alma Elzon, Samantha Leeman, Noam Olsha, Netta Rozen, Levi Vacca, Samantha Vanaria</div>
             <div class="tags"><span class="tag tag-novice">Novice</span><span class="tag tag-petite">Petite</span><span class="tag tag-genre">Lyrical · Large Group</span></div>
+            <div class="award-results"><span class="award-tag award-tag-highgold">🥇 High Gold</span><span class="award-tag award-tag-overall">🏆 1st Overall</span></div>
           </div>
           <div class="routine-time-col"><div class="time-stage">8:49 AM</div><div class="time-arrive">Arrive 7:15 AM</div></div>
         </div>
@@ -1232,6 +1263,7 @@
             <div class="routine-dancer">Large Group (11)</div>
             <div class="routine-roster">Sydney Bakaysa, Paulina Bandarchuk, Ava Belkin, Liora Belkin, Abigail Dumanski, Alma Elzon, Samantha Leeman, Noam Olsha, Netta Rozen, Levi Vacca, Samantha Vanaria</div>
             <div class="tags"><span class="tag tag-novice">Novice</span><span class="tag tag-petite">Petite</span><span class="tag tag-genre">Tap · Large Group</span></div>
+            <div class="award-results"><span class="award-tag award-tag-highgold">🥇 High Gold</span></div>
           </div>
           <div class="routine-time-col"><div class="time-stage">9:10 AM</div><div class="time-arrive">Already there</div></div>
         </div>
@@ -1245,6 +1277,7 @@
             <div class="routine-title">Do What I Do</div>
             <div class="routine-dancer">Gali Krispin</div>
             <div class="tags"><span class="tag tag-novice">Novice</span><span class="tag tag-petite">Petite</span><span class="tag tag-genre">Jazz · Solo</span></div>
+            <div class="award-results"><span class="award-tag award-tag-gold">🥇 Gold</span><span class="award-tag award-tag-overall">🏆 4th Overall</span></div>
           </div>
           <div class="routine-time-col"><div class="time-stage">9:52 AM</div><div class="time-arrive">Arrive 7:30 AM</div></div>
         </div>
@@ -1258,6 +1291,7 @@
             <div class="routine-title">Witch Doctor</div>
             <div class="routine-dancer">Sydney Bakaysa</div>
             <div class="tags"><span class="tag tag-novice">Novice</span><span class="tag tag-petite">Petite</span><span class="tag tag-genre">Jazz · Solo</span></div>
+            <div class="award-results"><span class="award-tag award-tag-platinum">💎 Platinum</span><span class="award-tag award-tag-overall">🏆 1st Overall</span></div>
           </div>
           <div class="routine-time-col"><div class="time-stage">9:57 AM</div><div class="time-arrive">Already there</div></div>
         </div>
@@ -1272,6 +1306,7 @@
             <div class="routine-dancer">Large Group (11)</div>
             <div class="routine-roster">Sydney Bakaysa, Paulina Bandarchuk, Ava Belkin, Liora Belkin, Abigail Dumanski, Alma Elzon, Samantha Leeman, Noam Olsha, Netta Rozen, Levi Vacca, Samantha Vanaria</div>
             <div class="tags"><span class="tag tag-novice">Novice</span><span class="tag tag-petite">Petite</span><span class="tag tag-genre">Jazz · Large Group</span></div>
+            <div class="award-results"><span class="award-tag award-tag-highgold">🥇 High Gold</span></div>
           </div>
           <div class="routine-time-col"><div class="time-stage">10:49 AM</div><div class="time-arrive">Already there</div></div>
         </div>
@@ -1285,6 +1320,7 @@
             <div class="routine-title">It's All About Me</div>
             <div class="routine-dancer">Samantha Vanaria</div>
             <div class="tags"><span class="tag tag-intermediate">Intermediate</span><span class="tag tag-petite">Petite</span><span class="tag tag-genre">Jazz · Solo</span></div>
+            <div class="award-results"><span class="award-tag award-tag-highgold">🥇 High Gold</span></div>
           </div>
           <div class="routine-time-col"><div class="time-stage">11:21 AM</div><div class="time-arrive">Already there</div></div>
         </div>
@@ -1298,6 +1334,7 @@
             <div class="routine-title">I'll Stand By You</div>
             <div class="routine-dancer">Liora Belkin</div>
             <div class="tags"><span class="tag tag-novice">Novice</span><span class="tag tag-junior">Junior</span><span class="tag tag-genre">Lyrical · Solo</span></div>
+            <div class="award-results"><span class="award-tag award-tag-platinum">💎 Platinum</span><span class="award-tag award-tag-special">⭐ Promising Performer Award</span></div>
           </div>
           <div class="routine-time-col"><div class="time-stage">12:59 PM</div><div class="time-arrive">Already there</div></div>
         </div>
@@ -1317,6 +1354,7 @@
             <div class="routine-title">Up Up &amp; Away</div>
             <div class="routine-dancer">Ava Belkin &amp; Samantha Leeman</div>
             <div class="tags"><span class="tag tag-novice">Novice</span><span class="tag tag-junior">Junior</span><span class="tag tag-genre">Jazz · Duo/Trio</span></div>
+            <div class="award-results"><span class="award-tag award-tag-gold">🥇 Gold</span><span class="award-tag award-tag-overall">🏆 2nd Overall</span></div>
           </div>
           <div class="routine-time-col"><div class="time-stage">2:01 PM</div><div class="time-arrive">Arrive 1:00 PM</div></div>
         </div>
@@ -1331,6 +1369,7 @@
             <div class="routine-dancer">Small Group (8)</div>
             <div class="routine-roster">Kayleigh Bonica, Giuliana D'Orsi, Sylvia Daniels-Webster, Sienna Elzon, Noa Frimerman, Alexandra Gillette, Lily Gillis, Milly Hedgepath</div>
             <div class="tags"><span class="tag tag-intermediate">Intermediate</span><span class="tag tag-junior">Junior</span><span class="tag tag-genre">Contemporary · Small Group</span></div>
+            <div class="award-results"><span class="award-tag award-tag-highgold">🥇 High Gold</span><span class="award-tag award-tag-overall">🏆 8th Overall</span></div>
           </div>
           <div class="routine-time-col"><div class="time-stage">2:50 PM</div><div class="time-arrive">Arrive 1:00 PM</div></div>
         </div>
@@ -1344,6 +1383,7 @@
             <div class="routine-title">Imma Be</div>
             <div class="routine-dancer">Kayleigh Bonica</div>
             <div class="tags"><span class="tag tag-intermediate">Intermediate</span><span class="tag tag-junior">Junior</span><span class="tag tag-genre">Jazz · Solo</span></div>
+            <div class="award-results"><span class="award-tag award-tag-highgold">🥇 High Gold</span><span class="award-tag award-tag-overall">🏆 4th Overall</span></div>
           </div>
           <div class="routine-time-col"><div class="time-stage">3:28 PM</div><div class="time-arrive">Already there</div></div>
         </div>
@@ -1357,6 +1397,7 @@
             <div class="routine-title">Technologic</div>
             <div class="routine-dancer">Milly Hedgepath</div>
             <div class="tags"><span class="tag tag-intermediate">Intermediate</span><span class="tag tag-junior">Junior</span><span class="tag tag-genre">Jazz · Solo</span></div>
+            <div class="award-results"><span class="award-tag award-tag-highgold">🥇 High Gold</span><span class="award-tag award-tag-overall">🏆 3rd Overall</span></div>
           </div>
           <div class="routine-time-col"><div class="time-stage">4:08 PM</div><div class="time-arrive">Already there</div></div>
         </div>
@@ -1370,6 +1411,7 @@
             <div class="routine-title">So Little Time</div>
             <div class="routine-dancer">Hilla Grutman</div>
             <div class="tags"><span class="tag tag-intermediate">Intermediate</span><span class="tag tag-junior">Junior</span><span class="tag tag-genre">Tap · Solo</span></div>
+            <div class="award-results"><span class="award-tag award-tag-highgold">🥇 High Gold</span><span class="award-tag award-tag-overall">🏆 7th Overall</span></div>
           </div>
           <div class="routine-time-col"><div class="time-stage">4:26 PM</div><div class="time-arrive">Arrive 2:30 PM</div></div>
         </div>
@@ -1383,6 +1425,7 @@
             <div class="routine-title">Bring On The Rain</div>
             <div class="routine-dancer">Madeline Joseph</div>
             <div class="tags"><span class="tag tag-intermediate">Intermediate</span><span class="tag tag-junior">Junior</span><span class="tag tag-genre">Lyrical · Solo</span></div>
+            <div class="award-results"><span class="award-tag award-tag-platinum">💎 Platinum</span><span class="award-tag award-tag-overall">🏆 1st Overall</span></div>
           </div>
           <div class="routine-time-col"><div class="time-stage">4:49 PM</div><div class="time-arrive">Arrive 2:30 PM</div></div>
         </div>
@@ -1397,6 +1440,7 @@
             <div class="routine-dancer">Large Group (15)</div>
             <div class="routine-roster">Kayleigh Bonica, Annsha Chou, Giuliana D'Orsi, Sylvia Daniels-Webster, Sienna Elzon, Noa Frimerman, Alexandra Gillette, Lily Gillis, Hilla Grutman, Milly Hedgepath, Madeline Joseph, Emma List, Lilly Rubin, Ava Shamash, Ayla Steinwagner</div>
             <div class="tags"><span class="tag tag-intermediate">Intermediate</span><span class="tag tag-junior">Junior</span><span class="tag tag-genre">Jazz · Large Group</span></div>
+            <div class="award-results"><span class="award-tag award-tag-highgold">🥇 High Gold</span><span class="award-tag award-tag-overall">🏆 1st Overall</span></div>
           </div>
           <div class="routine-time-col"><div class="time-stage">5:25 PM</div><div class="time-arrive">Arrive 3:30 PM</div></div>
         </div>
@@ -1411,6 +1455,7 @@
             <div class="routine-dancer">Large Group (15)</div>
             <div class="routine-roster">Kayleigh Bonica, Annsha Chou, Giuliana D'Orsi, Sylvia Daniels-Webster, Sienna Elzon, Noa Frimerman, Alexandra Gillette, Lily Gillis, Hilla Grutman, Milly Hedgepath, Madeline Joseph, Emma List, Lilly Rubin, Ava Shamash, Ayla Steinwagner</div>
             <div class="tags"><span class="tag tag-intermediate">Intermediate</span><span class="tag tag-junior">Junior</span><span class="tag tag-genre">Lyrical · Large Group</span></div>
+            <div class="award-results"><span class="award-tag award-tag-highgold">🥇 High Gold</span><span class="award-tag award-tag-overall">🏆 2nd Overall</span></div>
           </div>
           <div class="routine-time-col"><div class="time-stage">5:42 PM</div><div class="time-arrive">Already there</div></div>
         </div>
@@ -1424,6 +1469,7 @@
             <div class="routine-title">Systematic Amnesia</div>
             <div class="routine-dancer">Paityn Kelly</div>
             <div class="tags"><span class="tag tag-advanced">Advanced</span><span class="tag tag-junior">Junior</span><span class="tag tag-genre">Contemporary · Solo</span></div>
+            <div class="award-results"><span class="award-tag award-tag-platinum">💎 Platinum</span><span class="award-tag award-tag-overall">🏆 1st Overall</span><span class="award-tag award-tag-special">⭐ Technical Excellence</span><span class="award-tag award-tag-special">⭐ Highest Scoring Contemporary 12 &amp; Under</span><span class="award-tag award-tag-special">⭐ Highest Scoring 12 &amp; Under Routine</span></div>
           </div>
           <div class="routine-time-col"><div class="time-stage">5:58 PM</div><div class="time-arrive">Arrive 4:00 PM</div></div>
         </div>
@@ -1438,6 +1484,7 @@
             <div class="routine-dancer">Large Group (11)</div>
             <div class="routine-roster">Kayleigh Bonica, Annsha Chou, Giuliana D'Orsi, Sylvia Daniels-Webster, Sienna Elzon, Milly Hedgepath, Madeline Joseph, Emma List, Lilly Rubin, Ava Shamash, Ayla Steinwagner</div>
             <div class="tags"><span class="tag tag-intermediate">Intermediate</span><span class="tag tag-junior">Junior</span><span class="tag tag-genre">Tap · Large Group</span></div>
+            <div class="award-results"><span class="award-tag award-tag-highgold">🥇 High Gold</span><span class="award-tag award-tag-overall">🏆 3rd Overall</span></div>
           </div>
           <div class="routine-time-col"><div class="time-stage">6:01 PM</div><div class="time-arrive">Already there</div></div>
         </div>
@@ -1451,6 +1498,7 @@
             <div class="routine-title">What Is Jazz <span class="title-pip"></span></div>
             <div class="routine-dancer">Clara Dodson</div>
             <div class="tags"><span class="tag tag-advanced">Advanced</span><span class="tag tag-junior">Junior</span><span class="tag tag-genre">Jazz · Solo</span></div>
+            <div class="award-results"><span class="award-tag award-tag-platinum">💎 Platinum</span><span class="award-tag award-tag-overall">🏆 2nd Overall</span><span class="award-tag award-tag-special">⭐ Choreography Award</span><span class="award-tag award-tag-special">⭐ Junior Title Winner</span><span class="award-tag award-tag-special">⭐ Highest Scoring Jazz 12 &amp; Under</span></div>
           </div>
           <div class="routine-time-col"><div class="time-stage">6:18 PM</div><div class="time-arrive">Arrive 4:00 PM</div></div>
         </div>
@@ -1464,6 +1512,7 @@
             <div class="routine-title">Tiny Voice</div>
             <div class="routine-dancer">Iliana Eldamaa</div>
             <div class="tags"><span class="tag tag-advanced">Advanced</span><span class="tag tag-junior">Junior</span><span class="tag tag-genre">Lyrical · Solo</span></div>
+            <div class="award-results"><span class="award-tag award-tag-platinum">💎 Platinum</span><span class="award-tag award-tag-overall">🏆 3rd Overall</span><span class="award-tag award-tag-special">⭐ Highest Scoring Lyrical 12 &amp; Under</span></div>
           </div>
           <div class="routine-time-col"><div class="time-stage">6:21 PM</div><div class="time-arrive">Arrive 4:00 PM</div></div>
         </div>
@@ -1477,6 +1526,7 @@
             <div class="routine-title">Rainbow <span class="title-pip"></span></div>
             <div class="routine-dancer">Sienna Elzon</div>
             <div class="tags"><span class="tag tag-advanced">Advanced</span><span class="tag tag-junior">Junior</span><span class="tag tag-genre">Lyrical · Solo</span></div>
+            <div class="award-results"><span class="award-tag award-tag-highgold">🥇 High Gold</span><span class="award-tag award-tag-overall">🏆 5th Overall</span><span class="award-tag award-tag-special">⭐ 2nd Runner Up Title</span></div>
           </div>
           <div class="routine-time-col"><div class="time-stage">6:24 PM</div><div class="time-arrive">Already there</div></div>
         </div>
@@ -1490,6 +1540,7 @@
             <div class="routine-title">Gunna Get</div>
             <div class="routine-dancer">Clara Dodson &amp; Paityn Kelly</div>
             <div class="tags"><span class="tag tag-advanced">Advanced</span><span class="tag tag-junior">Junior</span><span class="tag tag-genre">Jazz · Duo/Trio</span></div>
+            <div class="award-results"><span class="award-tag award-tag-platinum">💎 Platinum</span><span class="award-tag award-tag-overall">🏆 1st Overall</span></div>
           </div>
           <div class="routine-time-col"><div class="time-stage">6:35 PM</div><div class="time-arrive">Already there</div></div>
         </div>
@@ -1511,6 +1562,7 @@
             <div class="routine-title">What Have You Done For Me Lately</div>
             <div class="routine-dancer">Nina Marriott</div>
             <div class="tags"><span class="tag tag-intermediate">Intermediate</span><span class="tag tag-senior">Senior</span><span class="tag tag-genre">Jazz · Solo</span></div>
+            <div class="award-results"><span class="award-tag award-tag-highgold">🥇 High Gold</span><span class="award-tag award-tag-special">⭐ ADX Convention Scholarship Winner</span></div>
           </div>
           <div class="routine-time-col"><div class="time-stage">9:08 PM</div><div class="time-arrive">Arrive 8:00 PM</div></div>
         </div>
